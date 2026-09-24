@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Background Dark Navy Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a132e" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <!-- Monogram Stroke Gradient: Crisp White to Electric Sky Blue -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#e0f2fe" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <!-- Outer Border Glow Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0.3" />
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Base -->
+  <rect x="1.5" y="1.5" width="61" height="61" rx="16" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="2" />
+
+  <!-- Monogram "A" -->
+  <path
+    d="M 12.5 48 L 21.5 16 L 30.5 48 M 16 37 L 27 37"
+    fill="none"
+    stroke="url(#textGrad)"
+    stroke-width="4.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Monogram "S" -->
+  <path
+    d="M 49.5 23.5 C 49.5 18 45.5 16 41 16 C 36 16 33.5 19.5 33.5 24 C 33.5 30.5 49.5 32 49.5 40 C 49.5 46 45.5 48 41 48 C 35.5 48 33 44.5 33 40"
+    fill="none"
+    stroke="url(#textGrad)"
+    stroke-width="4.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Signature SEO Signal Lime Accent Dot -->
+  <circle cx="52" cy="14" r="3.2" fill="#a3e635" />
+</svg>
