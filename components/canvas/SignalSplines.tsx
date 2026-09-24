@@ -28,9 +28,9 @@ export default function SignalSplines() {
           new THREE.Vector3(6.5, -2.5, -2.5),
         ],
         color: "#1e3a8a",
-        pulseColor: "#a3e635", // Lime pulse
+        pulseColor: "#38bdf8", // Subtle cyan pulse
         speed: 0.16,
-        lightIntensity: 2.2,
+        lightIntensity: 0.45,
       },
       {
         points: [
@@ -41,9 +41,9 @@ export default function SignalSplines() {
           new THREE.Vector3(-6.8, -3.2, -3.2),
         ],
         color: "#4338ca",
-        pulseColor: "#38bdf8", // Electric Blue pulse
+        pulseColor: "#60a5fa", // Soft blue pulse
         speed: 0.12,
-        lightIntensity: 2.5,
+        lightIntensity: 0.50,
       },
       {
         points: [
@@ -54,9 +54,9 @@ export default function SignalSplines() {
           new THREE.Vector3(2.0, 4.2, -3.5),
         ],
         color: "#2563eb",
-        pulseColor: "#bef264", // Vivid lime accent
+        pulseColor: "#38bdf8", // Subtle sky pulse
         speed: 0.2,
-        lightIntensity: 1.8,
+        lightIntensity: 0.35,
       },
       {
         points: [
@@ -67,9 +67,9 @@ export default function SignalSplines() {
           new THREE.Vector3(5.8, -3.5, -3.0),
         ],
         color: "#6d28d9",
-        pulseColor: "#60a5fa", // Cyan-blue pulse
+        pulseColor: "#818cf8", // Soft indigo pulse
         speed: 0.14,
-        lightIntensity: 2.0,
+        lightIntensity: 0.40,
       },
     ];
 
@@ -121,7 +121,7 @@ export default function SignalSplines() {
             new THREE.LineBasicMaterial({
               color: track.color,
               transparent: true,
-              opacity: 0.28,
+              opacity: 0.08,
               blending: THREE.AdditiveBlending,
               depthWrite: false,
             })
@@ -139,7 +139,7 @@ export default function SignalSplines() {
         >
           {/* Signal Packet Core */}
           <mesh>
-            <sphereGeometry args={[0.08, 16, 16]} />
+            <sphereGeometry args={[0.045, 16, 16]} />
             <meshBasicMaterial
               color={track.pulseColor}
               toneMapped={false}
@@ -147,12 +147,12 @@ export default function SignalSplines() {
           </mesh>
 
           {/* Signal Ion Trail */}
-          <mesh position={[0, 0, -0.16]}>
-            <cylinderGeometry args={[0.02, 0.08, 0.35, 12]} />
+          <mesh position={[0, 0, -0.12]}>
+            <cylinderGeometry args={[0.015, 0.05, 0.22, 12]} />
             <meshBasicMaterial
               color={track.pulseColor}
               transparent
-              opacity={0.65}
+              opacity={0.15}
               blending={THREE.AdditiveBlending}
               toneMapped={false}
             />
@@ -162,7 +162,7 @@ export default function SignalSplines() {
           <pointLight
             color={track.pulseColor}
             intensity={track.lightIntensity}
-            distance={4.5}
+            distance={2.5}
             decay={2}
           />
         </group>

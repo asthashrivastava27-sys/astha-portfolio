@@ -25,30 +25,30 @@ export default function HeroScene() {
   return (
     <>
       {/* Cinematic Fog for atmospheric depth */}
-      <color attach="background" args={["#030712"]} />
-      <fogExp2 attach="fog" args={["#040817", 0.038]} />
+      <color attach="background" args={["#020617"]} />
+      <fogExp2 attach="fog" args={["#020617", 0.046]} />
 
-      {/* Cinematic Multi-Source Lighting */}
-      <ambientLight intensity={0.45} color="#0d1b3e" />
+      {/* Cinematic Multi-Source Lighting - Restrained Ambient Tech */}
+      <ambientLight intensity={0.18} color="#0a152e" />
 
       {/* Electric Blue Key Light */}
       <directionalLight
         position={[6, 8, 5]}
-        intensity={2.2}
+        intensity={0.55}
         color="#38bdf8"
       />
 
       {/* Muted Violet Fill Light */}
       <directionalLight
         position={[-6, -4, -3]}
-        intensity={1.5}
-        color="#7c3aed"
+        intensity={0.35}
+        color="#6366f1"
       />
 
       {/* Deep Navy Rim Light */}
       <pointLight
         position={[0, -6, 2]}
-        intensity={2.8}
+        intensity={0.65}
         color="#1e1b4b"
         distance={14}
       />
@@ -56,8 +56,8 @@ export default function HeroScene() {
       {/* Ambient Signal Accent Light */}
       <pointLight
         position={[0, -2, -8]}
-        intensity={2.5}
-        color="#a3e635"
+        intensity={0.5}
+        color="#38bdf8"
         distance={16}
         decay={2}
       />

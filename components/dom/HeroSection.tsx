@@ -54,7 +54,7 @@ export default function HeroSection() {
           </a>
 
           <a
-            href="/Astha-Shrivastava-Resume.pdf"
+            href="/resume"
             target="_blank"
             rel="noopener noreferrer"
             className="px-7 py-3.5 rounded-xl bg-[#060b1e]/90 text-slate-100 text-sm font-mono tracking-wider uppercase font-semibold border border-slate-600 hover:border-blue-400 hover:text-white backdrop-blur-md transition-all flex items-center gap-2 cursor-pointer group shadow-lg"

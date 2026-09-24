@@ -31,7 +31,7 @@ const CONTACT_CARDS = [
   {
     label: "Resume",
     actionText: "View my Resume",
-    href: "/Astha-Shrivastava-Resume.pdf",
+    href: "/resume",
     icon: FileText,
     color: "border-sky-500/30",
   },
@@ -73,8 +73,8 @@ export default function ContactSection() {
             <a
               key={card.label}
               href={card.href}
-              target={card.href.startsWith("http") || card.href.endsWith(".pdf") ? "_blank" : undefined}
-              rel={card.href.startsWith("http") || card.href.endsWith(".pdf") ? "noopener noreferrer" : undefined}
+              target={card.href.startsWith("http") || card.href === "/resume" ? "_blank" : undefined}
+              rel={card.href.startsWith("http") || card.href === "/resume" ? "noopener noreferrer" : undefined}
               className={`p-6 sm:p-7 rounded-2xl bg-[#060b1e]/90 border ${card.color} backdrop-blur-xl shadow-xl shadow-black/40 flex flex-col justify-between hover:translate-y-[-2px] hover:border-lime-400/60 transition-all cursor-pointer group`}
             >
               <div>

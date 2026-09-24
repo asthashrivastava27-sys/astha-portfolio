@@ -104,7 +104,7 @@ function SignalClusterNode({
       const pulse = (Math.sin(time * 3.5 + cluster.position[1]) + 1) * 0.5;
       const mat = haloRef.current.material as THREE.MeshBasicMaterial;
       if (mat) {
-        mat.opacity = hovered ? 0.9 : 0.25 + pulse * 0.25;
+        mat.opacity = hovered ? 0.6 : 0.06 + pulse * 0.06;
       }
       haloRef.current.rotation.z -= delta * 0.3;
     }
@@ -141,8 +141,8 @@ function SignalClusterNode({
         <meshStandardMaterial
           color={hovered ? "#ffffff" : cluster.color}
           emissive={hovered ? cluster.color : cluster.glowColor}
-          emissiveIntensity={hovered ? 2.2 : 1.0}
-          roughness={0.2}
+          emissiveIntensity={hovered ? 1.2 : 0.22}
+          roughness={0.3}
           metalness={0.85}
           wireframe={!hovered}
         />
@@ -159,7 +159,7 @@ function SignalClusterNode({
           color={cluster.color}
           wireframe
           transparent
-          opacity={0.35}
+          opacity={0.08}
           blending={THREE.AdditiveBlending}
         />
       </mesh>
@@ -168,8 +168,8 @@ function SignalClusterNode({
       <pointLight
         position={[0, cluster.position[1], 0]}
         color={cluster.color}
-        intensity={hovered ? 3.5 : 1.6}
-        distance={5}
+        intensity={hovered ? 1.6 : 0.35}
+        distance={4}
         decay={2}
       />
     </group>
@@ -206,7 +206,7 @@ export default function SignalScene() {
 
   // Traveling Particle Stream along each signal path
   const particleStream = useMemo(() => {
-    const totalParticles = 240;
+    const totalParticles = 75;
     const pos = new Float32Array(totalParticles * 3);
     const cols = new Float32Array(totalParticles * 3);
 
@@ -232,7 +232,7 @@ export default function SignalScene() {
 
   // Background Depth Dust for the Signal Field
   const { bgPos, bgCols } = useMemo(() => {
-    const count = 450;
+    const count = 180;
     const pos = new Float32Array(count * 3);
     const cols = new Float32Array(count * 3);
 
@@ -242,11 +242,11 @@ export default function SignalScene() {
       pos[i * 3 + 2] = -8 + (Math.random() - 0.5) * 16;
 
       if (Math.random() < 0.25) {
-        cols[i * 3] = 0.64; cols[i * 3 + 1] = 0.9; cols[i * 3 + 2] = 0.2; // Lime
+        cols[i * 3] = 0.12; cols[i * 3 + 1] = 0.25; cols[i * 3 + 2] = 0.45; // Subtle slate-blue
       } else if (Math.random() < 0.65) {
-        cols[i * 3] = 0.22; cols[i * 3 + 1] = 0.65; cols[i * 3 + 2] = 0.98; // Cyan/Blue
+        cols[i * 3] = 0.10; cols[i * 3 + 1] = 0.35; cols[i * 3 + 2] = 0.65; // Soft indigo
       } else {
-        cols[i * 3] = 0.5; cols[i * 3 + 1] = 0.3; cols[i * 3 + 2] = 0.85; // Violet
+        cols[i * 3] = 0.22; cols[i * 3 + 1] = 0.16; cols[i * 3 + 2] = 0.45; // Deep violet
       }
     }
     return { bgPos: pos, bgCols: cols };
@@ -279,7 +279,7 @@ export default function SignalScene() {
         mesh.scale.set(scale, scale, scale);
         const mat = mesh.material as THREE.MeshBasicMaterial;
         if (mat) {
-          mat.opacity = Math.max(0, 0.5 - (phase / 3) * 0.5);
+          mat.opacity = Math.max(0, 0.10 - (phase / 3) * 0.10);
         }
       });
     }
@@ -328,14 +328,17 @@ export default function SignalScene() {
         <mesh ref={resonatorRef}>
           <torusKnotGeometry args={[1.8, 0.4, 120, 24, 2, 3]} />
           <meshPhysicalMaterial
-            color="#081028"
-            emissive="#1e1b4b"
-            emissiveIntensity={0.8}
-            roughness={0.2}
-            metalness={0.9}
+            color="#0a1636"
+            emissive="#162248"
+            emissiveIntensity={0.22}
+            roughness={0.25}
+            metalness={0.4}
             clearcoat={1}
-            clearcoatRoughness={0.1}
-            reflectivity={0.95}
+            clearcoatRoughness={0.15}
+            reflectivity={0.7}
+            transparent
+            opacity={0.35}
+            depthWrite={false}
           />
         </mesh>
 
@@ -344,7 +347,7 @@ export default function SignalScene() {
           <lineBasicMaterial
             color="#38bdf8"
             transparent
-            opacity={0.55}
+            opacity={0.11}
             blending={THREE.AdditiveBlending}
           />
         </lineSegments>
@@ -355,9 +358,9 @@ export default function SignalScene() {
             <mesh key={`wave-${idx}`} rotation={[Math.PI / 2, 0, 0]}>
               <ringGeometry args={[1.9, 1.95, 64]} />
               <meshBasicMaterial
-                color={idx === 1 ? "#a3e635" : "#38bdf8"}
+                color={idx === 1 ? "#0284c7" : "#38bdf8"}
                 transparent
-                opacity={0.4}
+                opacity={0.08}
                 side={THREE.DoubleSide}
                 blending={THREE.AdditiveBlending}
               />
@@ -365,17 +368,17 @@ export default function SignalScene() {
           ))}
         </group>
 
-        {/* Central Signal Point Light */}
+        {/* Central Signal Point Light (Restrained) */}
         <pointLight
           color="#38bdf8"
-          intensity={4.0}
-          distance={12}
+          intensity={0.6}
+          distance={10}
           decay={2}
         />
         <pointLight
-          color="#a3e635"
-          intensity={2.2}
-          distance={8}
+          color="#0284c7"
+          intensity={0.3}
+          distance={6}
           decay={2}
         />
       </group>
@@ -392,7 +395,7 @@ export default function SignalScene() {
                 new THREE.LineBasicMaterial({
                   color: p.cluster.color,
                   transparent: true,
-                  opacity: 0.45,
+                  opacity: 0.09,
                   blending: THREE.AdditiveBlending,
                   depthWrite: false,
                 })
@@ -411,19 +414,19 @@ export default function SignalScene() {
           }}
         >
           <mesh>
-            <sphereGeometry args={[0.1, 16, 16]} />
+            <sphereGeometry args={[0.045, 16, 16]} />
             <meshBasicMaterial
               color={p.cluster.color}
               toneMapped={false}
             />
           </mesh>
 
-          <mesh position={[0, 0, -0.22]}>
-            <cylinderGeometry args={[0.02, 0.09, 0.45, 12]} />
+          <mesh position={[0, 0, -0.16]}>
+            <cylinderGeometry args={[0.015, 0.05, 0.25, 12]} />
             <meshBasicMaterial
               color={p.cluster.color}
               transparent
-              opacity={0.7}
+              opacity={0.14}
               blending={THREE.AdditiveBlending}
               toneMapped={false}
             />
@@ -431,8 +434,8 @@ export default function SignalScene() {
 
           <pointLight
             color={p.cluster.color}
-            intensity={2.8}
-            distance={5}
+            intensity={0.45}
+            distance={3.0}
             decay={2}
           />
         </group>
@@ -451,10 +454,10 @@ export default function SignalScene() {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.09}
+          size={0.035}
           vertexColors
           transparent
-          opacity={0.85}
+          opacity={0.18}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
           sizeAttenuation
@@ -477,10 +480,10 @@ export default function SignalScene() {
           <meshStandardMaterial
             color="#1e1b4b"
             emissive="#38bdf8"
-            emissiveIntensity={0.3}
+            emissiveIntensity={0.08}
             transparent
-            opacity={0.4}
-            roughness={0.1}
+            opacity={0.12}
+            roughness={0.2}
             wireframe
           />
         </mesh>
@@ -490,10 +493,10 @@ export default function SignalScene() {
           <meshStandardMaterial
             color="#1e1b4b"
             emissive="#8b5cf6"
-            emissiveIntensity={0.3}
+            emissiveIntensity={0.08}
             transparent
-            opacity={0.35}
-            roughness={0.1}
+            opacity={0.10}
+            roughness={0.2}
             wireframe
           />
         </mesh>
@@ -512,10 +515,10 @@ export default function SignalScene() {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.07}
+          size={0.034}
           vertexColors
           transparent
-          opacity={0.55}
+          opacity={0.14}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
           sizeAttenuation

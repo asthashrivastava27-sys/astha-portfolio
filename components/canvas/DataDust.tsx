@@ -8,9 +8,9 @@ export default function DataDust() {
   const pointsRef1 = useRef<THREE.Points>(null);
   const pointsRef2 = useRef<THREE.Points>(null);
 
-  // Deep Field Particles (Corpus Universe)
+  // Deep Field Particles (Corpus Universe - Restrained Faint Dust)
   const { positions1, colors1 } = useMemo(() => {
-    const count = 900;
+    const count = 420;
     const pos = new Float32Array(count * 3);
     const cols = new Float32Array(count * 3);
 
@@ -19,34 +19,34 @@ export default function DataDust() {
       pos[i * 3 + 1] = (Math.random() - 0.5) * 20;
       pos[i * 3 + 2] = (Math.random() - 0.5) * 24 - 4;
 
-      // Indigo to muted electric blue palette
+      // Deep indigo to muted slate-blue palette
       const mix = Math.random();
       if (mix < 0.6) {
-        cols[i * 3] = 0.15;     // Deep indigo
-        cols[i * 3 + 1] = 0.2;
-        cols[i * 3 + 2] = 0.6;
+        cols[i * 3] = 0.08;     // Deep navy/indigo
+        cols[i * 3 + 1] = 0.14;
+        cols[i * 3 + 2] = 0.38;
       } else if (mix < 0.9) {
-        cols[i * 3] = 0.22;    // Electric blue
-        cols[i * 3 + 1] = 0.55;
-        cols[i * 3 + 2] = 0.95;
+        cols[i * 3] = 0.12;    // Muted slate-blue
+        cols[i * 3 + 1] = 0.28;
+        cols[i * 3 + 2] = 0.55;
       } else {
-        cols[i * 3] = 0.55;    // Muted violet
-        cols[i * 3 + 1] = 0.35;
-        cols[i * 3 + 2] = 0.85;
+        cols[i * 3] = 0.25;    // Subtle twilight violet
+        cols[i * 3 + 1] = 0.18;
+        cols[i * 3 + 2] = 0.45;
       }
     }
 
     return { positions1: pos, colors1: cols };
   }, []);
 
-  // Active Signal Particles (Crawl Pulse)
+  // Active Signal Particles (Faint Ambient Sparks)
   const { positions2, colors2 } = useMemo(() => {
-    const count = 320;
+    const count = 110;
     const pos = new Float32Array(count * 3);
     const cols = new Float32Array(count * 3);
 
     for (let i = 0; i < count; i++) {
-      const radius = 2.0 + Math.random() * 5.5;
+      const radius = 2.2 + Math.random() * 5.5;
       const theta = Math.random() * Math.PI * 2;
       const phi = (Math.random() - 0.5) * Math.PI * 0.8;
 
@@ -54,15 +54,15 @@ export default function DataDust() {
       pos[i * 3 + 1] = radius * Math.sin(phi);
       pos[i * 3 + 2] = radius * Math.cos(phi) * Math.sin(theta);
 
-      // Electric blue with rare lime sparks
+      // Restrained soft cyan and subtle blue
       if (Math.random() < 0.2) {
-        cols[i * 3] = 0.64;     // Lime accent
-        cols[i * 3 + 1] = 0.9;
-        cols[i * 3 + 2] = 0.2;
+        cols[i * 3] = 0.15;     // Soft cyan accent
+        cols[i * 3 + 1] = 0.45;
+        cols[i * 3 + 2] = 0.75;
       } else {
-        cols[i * 3] = 0.22;     // Electric blue
-        cols[i * 3 + 1] = 0.74;
-        cols[i * 3 + 2] = 0.98;
+        cols[i * 3] = 0.10;     // Subtle deep blue
+        cols[i * 3 + 1] = 0.30;
+        cols[i * 3 + 2] = 0.60;
       }
     }
 
@@ -98,10 +98,10 @@ export default function DataDust() {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.065}
+          size={0.038}
           vertexColors
           transparent
-          opacity={0.65}
+          opacity={0.18}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
           sizeAttenuation
@@ -121,10 +121,10 @@ export default function DataDust() {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.08}
+          size={0.040}
           vertexColors
           transparent
-          opacity={0.8}
+          opacity={0.22}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
           sizeAttenuation

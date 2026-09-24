@@ -126,7 +126,7 @@ function NodeItem({ node }: { node: GraphNodeData }) {
       const pulse = (Math.sin(time * 3 + node.position[1]) + 1) * 0.5;
       const glowMat = glowRef.current.material as THREE.MeshBasicMaterial;
       if (glowMat) {
-        glowMat.opacity = hovered ? 0.9 : 0.25 + pulse * 0.2;
+        glowMat.opacity = hovered ? 0.6 : 0.05 + pulse * 0.04;
       }
     }
   });
@@ -156,8 +156,8 @@ function NodeItem({ node }: { node: GraphNodeData }) {
         <meshStandardMaterial
           color={hovered ? "#a3e635" : node.category === "SEO Strategy" ? "#38bdf8" : "#6366f1"}
           emissive={hovered ? "#a3e635" : node.category === "SEO Strategy" ? "#0284c7" : "#4338ca"}
-          emissiveIntensity={hovered ? 1.6 : 0.8}
-          roughness={0.2}
+          emissiveIntensity={hovered ? 1.0 : 0.20}
+          roughness={0.25}
           metalness={0.8}
           wireframe={!hovered}
         />
@@ -170,7 +170,7 @@ function NodeItem({ node }: { node: GraphNodeData }) {
           color={hovered ? "#a3e635" : "#38bdf8"}
           wireframe
           transparent
-          opacity={0.3}
+          opacity={0.07}
           blending={THREE.AdditiveBlending}
         />
       </mesh>
@@ -226,7 +226,7 @@ export default function SearchGraph() {
       const time = state.clock.getElapsedTime();
       const mat = lineSegmentsRef.current.material as THREE.LineBasicMaterial;
       if (mat) {
-        mat.opacity = 0.35 + Math.sin(time * 1.5) * 0.12;
+        mat.opacity = 0.08 + Math.sin(time * 1.5) * 0.04;
       }
     }
   });
@@ -248,7 +248,7 @@ export default function SearchGraph() {
         <lineBasicMaterial
           vertexColors
           transparent
-          opacity={0.4}
+          opacity={0.10}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
         />

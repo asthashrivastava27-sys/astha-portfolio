@@ -31,7 +31,7 @@ export default function SearchCore({ position = [0, 0, 0] }: { position?: [numbe
       const pulse = (Math.sin(time * 2.5) + 1) * 0.5;
       const mat = cageRef.current.material as THREE.LineBasicMaterial;
       if (mat) {
-        mat.opacity = 0.45 + pulse * 0.35;
+        mat.opacity = 0.11 + pulse * 0.07;
       }
     }
 
@@ -59,13 +59,16 @@ export default function SearchCore({ position = [0, 0, 0] }: { position?: [numbe
         <octahedronGeometry args={[1.35, 1]} />
         <meshPhysicalMaterial
           color="#0d1b3e"
-          emissive="#1e1b4b"
-          emissiveIntensity={0.6}
-          roughness={0.18}
-          metalness={0.88}
+          emissive="#1e2955"
+          emissiveIntensity={0.28}
+          roughness={0.2}
+          metalness={0.35}
           clearcoat={1}
-          clearcoatRoughness={0.1}
-          reflectivity={0.9}
+          clearcoatRoughness={0.15}
+          reflectivity={0.8}
+          transparent
+          opacity={0.42}
+          depthWrite={false}
           wireframe={false}
         />
       </mesh>
@@ -76,7 +79,7 @@ export default function SearchCore({ position = [0, 0, 0] }: { position?: [numbe
         <lineBasicMaterial
           color="#38bdf8"
           transparent
-          opacity={0.65}
+          opacity={0.14}
           blending={THREE.AdditiveBlending}
         />
       </lineSegments>
@@ -85,57 +88,57 @@ export default function SearchCore({ position = [0, 0, 0] }: { position?: [numbe
       <lineSegments>
         <edgesGeometry args={[new THREE.DodecahedronGeometry(2.35, 0)]} />
         <lineBasicMaterial
-          color="#8b5cf6"
+          color="#4f46e5"
           transparent
-          opacity={0.3}
+          opacity={0.08}
           blending={THREE.AdditiveBlending}
         />
       </lineSegments>
 
-      {/* Orbital Index Ring 1 - Electric Blue Precision Ring */}
+      {/* Orbital Index Ring 1 - Deep Blue Precision Ring */}
       <mesh ref={ring1Ref}>
-        <torusGeometry args={[2.8, 0.018, 16, 100]} />
+        <torusGeometry args={[2.8, 0.016, 16, 100]} />
         <meshBasicMaterial
-          color="#0066ff"
+          color="#1d4ed8"
           transparent
-          opacity={0.7}
+          opacity={0.16}
           blending={THREE.AdditiveBlending}
         />
       </mesh>
 
-      {/* Orbital Index Ring 2 - Lime Signal Accent */}
+      {/* Orbital Index Ring 2 - Muted Cyan Signal Accent */}
       <mesh ref={ring2Ref}>
-        <torusGeometry args={[3.2, 0.014, 16, 100]} />
+        <torusGeometry args={[3.2, 0.012, 16, 100]} />
         <meshBasicMaterial
-          color="#a3e635"
+          color="#0284c7"
           transparent
-          opacity={0.55}
+          opacity={0.12}
           blending={THREE.AdditiveBlending}
         />
       </mesh>
 
-      {/* Orbital Index Ring 3 - Deep Violet Meridian */}
+      {/* Orbital Index Ring 3 - Deep Indigo Meridian */}
       <mesh ref={ring3Ref}>
-        <torusGeometry args={[3.6, 0.012, 16, 100]} />
+        <torusGeometry args={[3.6, 0.010, 16, 100]} />
         <meshBasicMaterial
-          color="#7c3aed"
+          color="#4338ca"
           transparent
-          opacity={0.4}
+          opacity={0.09}
           blending={THREE.AdditiveBlending}
         />
       </mesh>
 
-      {/* Central Core Point Light with Lime/Electric Blue Hue */}
+      {/* Central Core Ambient Point Light (Restrained & Subtle) */}
       <pointLight
-        color="#38bdf8"
-        intensity={3.5}
-        distance={9}
+        color="#0284c7"
+        intensity={0.5}
+        distance={8}
         decay={2}
       />
       <pointLight
-        color="#a3e635"
-        intensity={1.8}
-        distance={6}
+        color="#38bdf8"
+        intensity={0.25}
+        distance={5}
         decay={2}
       />
     </group>
