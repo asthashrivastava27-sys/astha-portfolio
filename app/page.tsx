@@ -51,7 +51,7 @@ export default function Home() {
       </div>
 
       {/* Atmospheric Vignette & Contrast Preserving Gradient */}
-      <div className="fixed inset-0 pointer-events-none z-10 bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(3,7,18,0.75)_80%,rgba(3,7,18,0.96)_100%)]" />
+      <div className="fixed inset-0 pointer-events-none z-10 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(3,7,18,0.35)_70%,rgba(3,7,18,0.65)_100%)] lg:bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(3,7,18,0.75)_80%,rgba(3,7,18,0.96)_100%)]" />
 
       {/* Global Recruiter Navigation */}
       <Navbar />
