@@ -1,6 +1,7 @@
 "use client";
 
 import { Mail, FileText, ArrowRight } from "lucide-react";
+import { trackEmailClick, trackLinkedInClick, trackResumeClick } from "@/lib/analytics";
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -69,10 +70,21 @@ export default function ContactSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {CONTACT_CARDS.map((card) => {
           const Icon = card.icon;
+          const handleCardClick = () => {
+            if (card.label === "Resume") {
+              trackResumeClick("contact");
+            } else if (card.label === "LinkedIn") {
+              trackLinkedInClick("contact");
+            } else if (card.label === "Email") {
+              trackEmailClick("contact");
+            }
+          };
+
           return (
             <a
               key={card.label}
               href={card.href}
+              onClick={handleCardClick}
               target={card.href.startsWith("http") || card.href === "/resume" ? "_blank" : undefined}
               rel={card.href.startsWith("http") || card.href === "/resume" ? "noopener noreferrer" : undefined}
               className={`p-6 sm:p-7 rounded-2xl bg-[#060b1e]/90 border ${card.color} backdrop-blur-xl shadow-xl shadow-black/40 flex flex-col justify-between hover:translate-y-[-2px] hover:border-lime-400/60 transition-all cursor-pointer group`}

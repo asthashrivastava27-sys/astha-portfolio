@@ -1,6 +1,7 @@
 "use client";
 
 import { ExternalLink, Check, Code2, Globe, TrendingUp, Users, FileSpreadsheet } from "lucide-react";
+import { trackProjectClick } from "@/lib/analytics";
 
 const SIMPLE_SCALERS_OWNERSHIP = [
   "Project planning & website brief",
@@ -104,6 +105,7 @@ export default function ProjectsSection() {
             href="https://simplescalers.com"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackProjectClick("Simple Scalers", "projects")}
             className="inline-flex items-center gap-2 self-start lg:self-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-mono text-xs sm:text-sm font-semibold shadow-lg shadow-blue-950/60 hover:shadow-[0_0_25px_rgba(163,230,53,0.35)] hover:border-lime-400 border border-blue-400/40 transition-all cursor-pointer"
           >
             <span>Visit Website</span>

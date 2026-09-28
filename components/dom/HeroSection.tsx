@@ -1,6 +1,7 @@
 "use client";
 
 import { FileText, Sparkles } from "lucide-react";
+import { trackResumeClick } from "@/lib/analytics";
 
 export default function HeroSection() {
   return (
@@ -57,6 +58,7 @@ export default function HeroSection() {
             href="/resume"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackResumeClick("hero")}
             className="px-7 py-3.5 rounded-xl bg-[#060b1e]/90 text-slate-100 text-sm font-mono tracking-wider uppercase font-semibold border border-slate-600 hover:border-blue-400 hover:text-white backdrop-blur-md transition-all flex items-center gap-2 cursor-pointer group shadow-lg"
           >
             <FileText className="w-4 h-4 text-sky-300 group-hover:translate-y-0.5 transition-transform" />

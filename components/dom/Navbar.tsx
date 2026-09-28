@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { trackContactCtaClick } from "@/lib/analytics";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -58,6 +59,7 @@ export default function Navbar() {
         <div className="pointer-events-auto flex items-center gap-3">
           <a
             href="#contact"
+            onClick={() => trackContactCtaClick("navbar")}
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-mono tracking-wider font-semibold border border-blue-400/50 hover:border-lime-400 shadow-lg shadow-blue-950/60 hover:shadow-[0_0_20px_rgba(163,230,53,0.35)] transition-all cursor-pointer"
           >
             <span>Let&apos;s Connect</span>
@@ -93,7 +95,10 @@ export default function Navbar() {
           <div className="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center">
             <a
               href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                trackContactCtaClick("navbar");
+                setMobileMenuOpen(false);
+              }}
               className="w-full text-center py-3 rounded-xl bg-blue-600 text-white text-sm font-mono tracking-wider font-semibold"
             >
               Let&apos;s Connect
