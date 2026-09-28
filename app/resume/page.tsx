@@ -18,14 +18,14 @@ import {
 export const metadata: Metadata = {
   title: "Resume | Astha Shrivastava",
   description:
-    "Official resume of Astha Shrivastava, SEO Professional specializing in SEO, organic growth, content strategy, technical optimization, and digital marketing.",
+    "SEO Professional resume specializing in SEO, organic growth, content strategy, technical optimization, and digital marketing.",
   alternates: {
     canonical: "/resume",
   },
   openGraph: {
     title: "Resume | Astha Shrivastava",
     description:
-      "Official resume of Astha Shrivastava, SEO Professional specializing in SEO, organic growth, content strategy, technical optimization, and digital marketing.",
+      "SEO Professional resume specializing in SEO, organic growth, content strategy, technical optimization, and digital marketing.",
     url: "https://astha-shrivastava.com/resume",
     siteName: "Astha Shrivastava",
     type: "website",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Resume | Astha Shrivastava",
     description:
-      "Official resume of Astha Shrivastava, SEO Professional specializing in SEO, organic growth, content strategy, technical optimization, and digital marketing.",
+      "SEO Professional resume specializing in SEO, organic growth, content strategy, technical optimization, and digital marketing.",
   },
 };
 
