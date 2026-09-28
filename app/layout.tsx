@@ -1,12 +1,35 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-JSWL44EM7V";
 
+export const viewport: Viewport = {
+  themeColor: "#030712",
+};
+
 export const metadata: Metadata = {
-  title: "Astha Shrivastava | SEO Portfolio",
-  description: "SEO Professional Portfolio",
+  metadataBase: new URL("https://astha-shrivastava.com"),
+  title: "Astha Shrivastava | SEO Professional",
+  description:
+    "SEO Professional portfolio showcasing organic growth, technical SEO, content strategy, AI search optimization, and data-driven digital growth.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Astha Shrivastava | SEO Professional",
+    description:
+      "SEO Professional portfolio showcasing organic growth, technical SEO, content strategy, AI search optimization, and data-driven digital growth.",
+    url: "https://astha-shrivastava.com/",
+    siteName: "Astha Shrivastava",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Astha Shrivastava | SEO Professional",
+    description:
+      "SEO Professional portfolio showcasing organic growth, technical SEO, content strategy, AI search optimization, and data-driven digital growth.",
+  },
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },

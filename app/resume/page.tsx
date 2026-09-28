@@ -18,7 +18,24 @@ import {
 export const metadata: Metadata = {
   title: "Resume | Astha Shrivastava",
   description:
-    "Official Resume of Astha Shrivastava — SEO Executive, Growth Marketer, and AI-Powered Digital Marketing Professional.",
+    "Official resume of Astha Shrivastava, SEO Professional specializing in SEO, organic growth, content strategy, technical optimization, and digital marketing.",
+  alternates: {
+    canonical: "/resume",
+  },
+  openGraph: {
+    title: "Resume | Astha Shrivastava",
+    description:
+      "Official resume of Astha Shrivastava, SEO Professional specializing in SEO, organic growth, content strategy, technical optimization, and digital marketing.",
+    url: "https://astha-shrivastava.com/resume",
+    siteName: "Astha Shrivastava",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Resume | Astha Shrivastava",
+    description:
+      "Official resume of Astha Shrivastava, SEO Professional specializing in SEO, organic growth, content strategy, technical optimization, and digital marketing.",
+  },
 };
 
 export default function ResumePage() {

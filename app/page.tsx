@@ -28,6 +28,41 @@ const SceneCanvas = dynamic(() => import("@/components/canvas/SceneCanvas"), {
   ),
 });
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://astha-shrivastava.com/#person",
+      "name": "Astha Shrivastava",
+      "jobTitle": "SEO Professional",
+      "url": "https://astha-shrivastava.com/",
+      "sameAs": [
+        "https://www.linkedin.com/in/astha-shrivastava23/",
+        "https://github.com/asthashrivastava27-sys",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://astha-shrivastava.com/#website",
+      "url": "https://astha-shrivastava.com/",
+      "name": "Astha Shrivastava",
+      "publisher": {
+        "@id": "https://astha-shrivastava.com/#person",
+      },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://astha-shrivastava.com/#profile",
+      "url": "https://astha-shrivastava.com/",
+      "name": "Astha Shrivastava | SEO Professional",
+      "mainEntity": {
+        "@id": "https://astha-shrivastava.com/#person",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   // Sync page scroll progress to 3D scene store for smooth camera depth transitions
   useEffect(() => {
@@ -45,6 +80,11 @@ export default function Home() {
 
   return (
     <main className="relative w-full bg-[#030712] text-white overflow-x-hidden selection:bg-blue-500/30">
+      {/* Structured Data (JSON-LD) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* 3D WebGL Background Layer (Three.js / React Three Fiber) */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-auto">
         <SceneCanvas />
