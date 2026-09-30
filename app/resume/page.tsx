@@ -72,7 +72,7 @@ export default function ResumePage() {
                   Astha Shrivastava
                 </h1>
                 <p className="text-base sm:text-lg font-medium text-sky-400 font-mono">
-                  SEO Executive | Growth Marketer | AI-Powered Digital Marketing
+                  SEO Professional | Growth Marketer | AI-Powered Digital Marketing
                 </p>
               </div>
 
@@ -105,7 +105,7 @@ export default function ResumePage() {
                 Profile
               </h2>
               <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
-                Results-driven SEO and Digital Marketing professional with 2+ years of experience in organic growth, content strategy, and AI-powered marketing. Skilled in SEO, analytics, email marketing, and no-code website development, with hands-on experience building and optimizing websites using modern AI tools and workflows.
+                Results-driven SEO and Digital Marketing professional with 3+ years of experience in organic growth, content strategy, and AI-powered marketing. Skilled in SEO, analytics, email marketing, and no-code website development, with hands-on experience building and optimizing websites using modern AI tools and workflows.
               </p>
             </div>
           </div>
