@@ -201,7 +201,7 @@ export default function ProjectsSection() {
 
       {/* FEATURED PROJECT: Personal Brand Portfolio */}
       <div className="mb-12 p-6 sm:p-10 rounded-3xl bg-gradient-to-b from-[#091124] to-[#060b1e] border border-blue-500/30 backdrop-blur-2xl shadow-2xl shadow-black/60">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-slate-800">
+        <div className="pb-8 border-b border-slate-800">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lime-500/15 border border-lime-500/30 text-xs sm:text-sm font-mono text-lime-300 font-medium mb-3">
               <Globe className="w-4 h-4 text-lime-400" />
@@ -214,16 +214,6 @@ export default function ProjectsSection() {
               SEO • AI-Assisted Development • Technical SEO
             </div>
           </div>
-
-          <a
-            href="https://astha-shrivastava.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackProjectClick("Personal Brand Portfolio", "projects")}
-            className="inline-flex items-center gap-2 self-start lg:self-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-mono text-xs sm:text-sm font-semibold shadow-lg shadow-blue-950/60 hover:shadow-[0_0_25px_rgba(163,230,53,0.35)] hover:border-lime-400 border border-blue-400/40 transition-all cursor-pointer"
-          >
-            <span>View Portfolio →</span>
-          </a>
         </div>
 
         {/* Description */}
