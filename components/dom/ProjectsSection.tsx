@@ -38,6 +38,34 @@ const TOOLS = [
   "SEO",
 ];
 
+const PORTFOLIO_HIGHLIGHTS_1 = [
+  "SEO-focused website architecture and content strategy",
+  "Technical SEO, canonicalization, metadata & structured data",
+  "XML sitemap & robots.txt implementation",
+  "Google Search Console setup and indexing validation",
+  "GA4 implementation with custom interaction tracking",
+];
+
+const PORTFOLIO_HIGHLIGHTS_2 = [
+  "AI-assisted website development",
+  "Next.js + Tailwind + WebGL/3D implementation",
+  "GitHub version control & Vercel deployment",
+  "Custom domain configuration",
+  "Performance & Core Web Vitals focus",
+];
+
+const PORTFOLIO_TOOLS = [
+  "Next.js",
+  "Tailwind CSS",
+  "WebGL/Three.js",
+  "GA4",
+  "Google Search Console",
+  "GitHub",
+  "Vercel",
+  "Cloudflare",
+  "AI-assisted development",
+];
+
 const OTHER_PROJECTS = [
   {
     title: "Organic Traffic Growth",
@@ -160,6 +188,91 @@ export default function ProjectsSection() {
           </div>
           <div className="flex flex-wrap gap-2">
             {TOOLS.map((tool) => (
+              <span
+                key={tool}
+                className="px-3.5 py-1.5 rounded-lg bg-white/[0.08] border border-white/15 text-xs sm:text-sm font-mono text-slate-100 font-medium"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* FEATURED PROJECT: Personal Brand Portfolio */}
+      <div className="mb-12 p-6 sm:p-10 rounded-3xl bg-gradient-to-b from-[#091124] to-[#060b1e] border border-blue-500/30 backdrop-blur-2xl shadow-2xl shadow-black/60">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-slate-800">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lime-500/15 border border-lime-500/30 text-xs sm:text-sm font-mono text-lime-300 font-medium mb-3">
+              <Globe className="w-4 h-4 text-lime-400" />
+              <span>Live Portfolio Website • End-to-End Ownership</span>
+            </div>
+            <h3 className="text-3xl sm:text-4xl font-black text-white">
+              Personal Brand Portfolio
+            </h3>
+            <div className="text-xs sm:text-sm font-mono tracking-wider text-blue-400 uppercase font-semibold mt-1">
+              SEO • AI-Assisted Development • Technical SEO
+            </div>
+          </div>
+
+          <a
+            href="https://astha-shrivastava.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackProjectClick("Personal Brand Portfolio", "projects")}
+            className="inline-flex items-center gap-2 self-start lg:self-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-mono text-xs sm:text-sm font-semibold shadow-lg shadow-blue-950/60 hover:shadow-[0_0_25px_rgba(163,230,53,0.35)] hover:border-lime-400 border border-blue-400/40 transition-all cursor-pointer"
+          >
+            <span>View Portfolio →</span>
+          </a>
+        </div>
+
+        {/* Description */}
+        <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed my-6">
+          Planned, optimized, and launched a personal brand portfolio website focused on showcasing SEO expertise, organic growth, technical SEO, content strategy, AI search optimization, and digital marketing experience. Managed the project end-to-end, including website architecture, SEO implementation, structured data, analytics, performance optimization, custom domain setup, Search Console, GA4, AI-assisted development, version control, and production deployment.
+        </p>
+
+        {/* Ownership & Tech Details Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+          {/* SEO & Strategy Highlights */}
+          <div className="p-6 rounded-2xl bg-[#040817]/90 border border-white/10">
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-blue-400 font-bold mb-4">
+              <Code2 className="w-4 h-4 text-blue-400" />
+              <span>SEO & Strategy Highlights</span>
+            </div>
+            <ul className="space-y-3">
+              {PORTFOLIO_HIGHLIGHTS_1.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm text-slate-200 font-normal">
+                  <Check className="w-4 h-4 text-lime-400 mt-0.5 shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Development & Deployment */}
+          <div className="p-6 rounded-2xl bg-[#040817]/90 border border-white/10">
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-lime-400 font-bold mb-4">
+              <Globe className="w-4 h-4 text-lime-400" />
+              <span>Development & Infrastructure</span>
+            </div>
+            <ul className="space-y-3">
+              {PORTFOLIO_HIGHLIGHTS_2.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm text-slate-200 font-normal">
+                  <Check className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Tools Badges */}
+        <div>
+          <div className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-slate-300 font-semibold mb-3">
+            Technologies & Tools Used:
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {PORTFOLIO_TOOLS.map((tool) => (
               <span
                 key={tool}
                 className="px-3.5 py-1.5 rounded-lg bg-white/[0.08] border border-white/15 text-xs sm:text-sm font-mono text-slate-100 font-medium"

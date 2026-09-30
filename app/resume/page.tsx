@@ -13,6 +13,7 @@ import {
   MapPin,
   CheckCircle2,
   Sparkles,
+  ExternalLink,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -279,39 +280,147 @@ export default function ResumePage() {
                 </div>
               </section>
 
-              {/* PROJECT */}
+              {/* PROJECTS */}
               <section className="pt-4">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2 rounded-xl bg-indigo-500/10 border border-indigo-400/20 text-indigo-400">
                     <FolderGit2 className="w-5 h-5" />
                   </div>
                   <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                    Project
+                    Projects
                   </h2>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/10">
-                  <h3 className="text-base sm:text-lg font-bold text-white mb-2">
-                    AI-Powered Website Development
-                  </h3>
-                  <ul className="space-y-2 text-sm text-slate-200">
-                    <li className="flex items-start gap-2.5">
-                      <span className="text-lime-400 mt-1.5">•</span>
-                      <span>Built and launched a live website using no-code AI development tools.</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <span className="text-lime-400 mt-1.5">•</span>
-                      <span>Designed service pages, lead generation workflows, and conversion-focused user journeys.</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <span className="text-lime-400 mt-1.5">•</span>
-                      <span>Implemented SEO best practices, responsive design, and analytics tracking.</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <span className="text-lime-400 mt-1.5">•</span>
-                      <span>Leveraged AI tools for content creation, website structure planning, and optimization.</span>
-                    </li>
-                  </ul>
+                <div className="space-y-6">
+                  {/* Personal Brand Portfolio */}
+                  <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/10">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
+                      <div>
+                        <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-lime-500/15 border border-lime-500/30 text-xs font-mono text-lime-300 font-medium mb-1.5">
+                          <span>Live Portfolio Website • End-to-End Ownership</span>
+                        </div>
+                        <h3 className="text-base sm:text-lg font-bold text-white">
+                          Personal Brand Portfolio
+                        </h3>
+                        <p className="text-xs font-mono text-blue-400 uppercase tracking-wide mt-0.5">
+                          SEO • AI-Assisted Development • Technical SEO
+                        </p>
+                      </div>
+
+                      <a
+                        href="https://astha-shrivastava.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-200 hover:text-white transition-colors self-start w-fit cursor-pointer"
+                      >
+                        <span>Visit Website</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-lime-400" />
+                      </a>
+                    </div>
+
+                    <p className="text-sm text-slate-200 leading-relaxed mb-4">
+                      Planned, designed, built, optimized, and launched my personal portfolio website from scratch, combining SEO strategy, technical SEO, AI-assisted development, analytics, structured data, performance optimization, and a real 3D/WebGL experience.
+                    </p>
+
+                    <div className="mb-4">
+                      <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold mb-2">
+                        Key Highlights:
+                      </h4>
+                      <ul className="space-y-2 text-sm text-slate-200">
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-lime-400 mt-1">•</span>
+                          <span>SEO-focused website architecture and content strategy</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-lime-400 mt-1">•</span>
+                          <span>Technical SEO, canonicalization, metadata &amp; structured data</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-lime-400 mt-1">•</span>
+                          <span>XML sitemap &amp; robots.txt implementation</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-lime-400 mt-1">•</span>
+                          <span>Google Search Console setup and indexing validation</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-lime-400 mt-1">•</span>
+                          <span>GA4 implementation with custom interaction tracking</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-lime-400 mt-1">•</span>
+                          <span>AI-assisted website development</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-lime-400 mt-1">•</span>
+                          <span>Next.js + Tailwind + WebGL/Three.js implementation</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-lime-400 mt-1">•</span>
+                          <span>GitHub version control &amp; Vercel deployment</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-lime-400 mt-1">•</span>
+                          <span>Custom domain configuration</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-lime-400 mt-1">•</span>
+                          <span>Performance &amp; Core Web Vitals focus</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="pt-3 border-t border-white/5">
+                      <div className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold mb-2">
+                        Technologies &amp; Tools:
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {[
+                          "Next.js",
+                          "Tailwind CSS",
+                          "WebGL/Three.js",
+                          "GA4",
+                          "Google Search Console",
+                          "GitHub",
+                          "Vercel",
+                          "Cloudflare",
+                          "AI-assisted development",
+                        ].map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2.5 py-0.5 rounded-md bg-white/[0.04] border border-white/10 text-xs font-mono text-slate-300"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* AI-Powered Website Development */}
+                  <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/10">
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-2">
+                      AI-Powered Website Development
+                    </h3>
+                    <ul className="space-y-2 text-sm text-slate-200">
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-lime-400 mt-1.5">•</span>
+                        <span>Built and launched a live website using no-code AI development tools.</span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-lime-400 mt-1.5">•</span>
+                        <span>Designed service pages, lead generation workflows, and conversion-focused user journeys.</span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-lime-400 mt-1.5">•</span>
+                        <span>Implemented SEO best practices, responsive design, and analytics tracking.</span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-lime-400 mt-1.5">•</span>
+                        <span>Leveraged AI tools for content creation, website structure planning, and optimization.</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </section>
             </div>
