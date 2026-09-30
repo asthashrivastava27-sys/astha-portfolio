@@ -57,7 +57,7 @@ export default function ExperienceSection() {
         </h2>
 
         <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed">
-          Experience in driving measurable organic growth through technical SEO, content optimization, website performance improvements, and data-driven search strategies.
+          With 3+ years of experience in SEO, I&apos;ve worked across content strategy, technical SEO, internal linking, website optimization, search visibility improvements, and performance-focused SEO initiatives to drive measurable organic growth.
         </p>
       </div>
 

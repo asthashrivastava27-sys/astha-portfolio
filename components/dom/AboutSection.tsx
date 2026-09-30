@@ -53,7 +53,7 @@ export default function AboutSection() {
         {/* Left Narrative Column */}
         <div className="lg:col-span-7 space-y-6 text-slate-200 font-normal leading-relaxed text-base sm:text-lg">
           <p className="p-6 sm:p-7 rounded-2xl bg-[#060b1e]/90 border border-blue-500/30 backdrop-blur-xl shadow-xl text-white font-medium text-lg sm:text-xl leading-relaxed">
-            I&apos;m Astha Shrivastava, an SEO Professional with an engineering background and a passion for driving sustainable organic growth through data-driven search strategies.
+            I&apos;m Astha Shrivastava, an SEO Professional with 3+ years of experience, an engineering background, and a passion for driving sustainable organic growth through data-driven search strategies.
           </p>
 
           <div className="p-6 sm:p-7 rounded-2xl bg-[#060b1e]/90 border border-white/10 backdrop-blur-xl space-y-5 text-base sm:text-lg text-slate-200 leading-[1.75]">
